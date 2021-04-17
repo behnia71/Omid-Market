@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "637004446060",
+    "project_id": "omid-market",
+    "storage_bucket": "omid-market.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:637004446060:android:2bf59443ff6c4cd2199b49",
+        "android_client_info": {
+          "package_name": "com.example.omidmarket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "637004446060-ghon990uupqrq46f9adrqe8u2963889e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.omidmarket",
+            "certificate_hash": "cb2dcd719f24ff6653d374697cc1b284ab3b3019"
+          }
+        },
+        {
+          "client_id": "637004446060-asl3o30282q8d4khc0ibp63pj7v201ni.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBB0MaY50Uw3bnHZbwH_RYyekJE9aI_a2g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "637004446060-asl3o30282q8d4khc0ibp63pj7v201ni.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
