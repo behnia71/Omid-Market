@@ -1,6 +1,8 @@
 package com.example.omidmarket;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.text.Editable;
@@ -101,10 +103,25 @@ public class AccountFragment extends Fragment {
         next_editText(ver4 , ver5);
         next_editText(ver5 , ver6);
 
+
+
+
         sendVerify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                String verify1= ver1.getText().toString();
+                String verify2= ver2.getText().toString();
+                String verify3= ver3.getText().toString();
+                String verify4= ver4.getText().toString();
+                String verify5= ver5.getText().toString();
+                String verify6= ver6.getText().toString();
+
+                String verifyCode = verify1+verify2+verify3+verify4+verify5+verify6;
+
+                if(randomNumber == Integer.valueOf(verifyCode)){
+                    Toast.makeText(getContext(), "به امید مارکت خوش آمدید..", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

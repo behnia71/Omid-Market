@@ -1,27 +1,17 @@
 package com.example.omidmarket;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.MenuItem;
-import android.widget.AbsListView;
 import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottom_navigation;
@@ -37,13 +27,15 @@ public class MainActivity extends AppCompatActivity {
         editText1 = findViewById(R.id.editText1);
 
 
-
+        SharedPreferences sharedPreferences = getSharedPreferences("user" , MODE_PRIVATE);
+        boolean account = sharedPreferences.getBoolean("account" , false);
 
         bottom_navigation = findViewById(R.id.bottom_navigation);
         fragment_container = findViewById(R.id.fragment_container);
 
         bottom_navigation.setSelectedItemId(R.id.home);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container , new HomeFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+
         bottom_navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -51,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 Fragment selectedFragment = null;
                 switch (item.getItemId()){
                     case R.id.account:
-                        selectedFragment = new AccountFragment();
+                            selectedFragment = new AccountFragment();
                         break;
                     case R.id.home:
                         selectedFragment = new HomeFragment();
