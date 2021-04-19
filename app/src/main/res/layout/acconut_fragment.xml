@@ -116,6 +116,90 @@
             android:text="ارسال"/>
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/information_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:columnCount="2"
+            android:rowCount="4">
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="نام و نام خانوادگی"/>
+            <EditText
+                android:id="@+id/first_last_name_EDT"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_edt"
+                android:layout_columnWeight="2"
+                android:inputType="text"/>
+            <TextView
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_columnWeight="1"
+                android:text="َشماره تلفن همراه"/>
+            <EditText
+                android:id="@+id/phone_number_EDT"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/border_edt"
+                android:textDirection="ltr"
+                android:layout_columnWeight="2"
+                android:inputType="number"/>
+            <TextView
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_columnWeight="1"
+                android:text="آدرس"/>
+            <EditText
+                android:id="@+id/address_EDT"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/border_edt"
+                android:textDirection="ltr"
+                android:layout_columnWeight="2"
+                android:inputType="text"/>
+            <TextView
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_columnWeight="1"
+                android:text="َعلاقه مندی ها"/>
+            <EditText
+                android:id="@+id/favorites_EDT"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/border_edt"
+                android:textDirection="ltr"
+                android:layout_columnWeight="2"
+                android:inputType="text"/>
+        </GridLayout>
+        <Button
+            android:id="@+id/send_information_BTN"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="تایید اطلاعات"/>
+
+
+    </LinearLayout>
 
 
 </RelativeLayout>

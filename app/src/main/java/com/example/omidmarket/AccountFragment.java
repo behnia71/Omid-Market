@@ -20,6 +20,19 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
@@ -27,6 +40,9 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 import java.util.Random;
 
@@ -34,8 +50,10 @@ public class AccountFragment extends Fragment {
 
     private EditText email,ver1,ver2,ver3,ver4,ver5,ver6;
     private Button sendPhone,sendVerify;
-    private LinearLayout sendLayout, verifyLayout;
+    private LinearLayout sendLayout, verifyLayout,informationLayout;
     private int randomNumber;
+    String email_str;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -48,6 +66,7 @@ public class AccountFragment extends Fragment {
 
         sendLayout = view.findViewById(R.id.send_layout);
         verifyLayout = view.findViewById(R.id.verify_layout);
+        informationLayout = view.findViewById(R.id.information_layout);
 
         ver1 = view.findViewById(R.id.ver1);
         ver2 = view.findViewById(R.id.ver2);
@@ -61,8 +80,8 @@ public class AccountFragment extends Fragment {
         sendPhone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String username = "omidbehnia9@gmail.com";
-                final String password = "Omid1371";
+                final String username = "behniasender@gmail.com";
+                final String password = "omid1371";
                 Random random = new Random();
                 randomNumber = random.nextInt(99999)+100000;
                 String messageToSend = "Your Code is : " + randomNumber;
@@ -120,7 +139,7 @@ public class AccountFragment extends Fragment {
                 String verifyCode = verify1+verify2+verify3+verify4+verify5+verify6;
 
                 if(randomNumber == Integer.valueOf(verifyCode)){
-                    Toast.makeText(getContext(), "به امید مارکت خوش آمدید..", Toast.LENGTH_SHORT).show();
+
                 }
             }
         });
@@ -132,12 +151,19 @@ public class AccountFragment extends Fragment {
     public void show_sendLayout(){
         sendLayout.setVisibility(View.VISIBLE);
         verifyLayout.setVisibility(View.GONE);
+        informationLayout.setVisibility(View.GONE);
+
     }
     public void show_verifyLayout(){
         sendLayout.setVisibility(View.GONE);
         verifyLayout.setVisibility(View.VISIBLE);
+        informationLayout.setVisibility(View.GONE);
     }
-
+    public void show_informationLayout(){
+        sendLayout.setVisibility(View.GONE);
+        verifyLayout.setVisibility(View.GONE);
+        informationLayout.setVisibility(View.VISIBLE);
+    }
 
 
     public void next_editText(EditText ver , EditText verFocus){
