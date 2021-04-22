@@ -27,8 +27,7 @@ public class MainActivity extends AppCompatActivity {
         editText1 = findViewById(R.id.editText1);
 
 
-        SharedPreferences sharedPreferences = getSharedPreferences("user" , MODE_PRIVATE);
-        boolean account = sharedPreferences.getBoolean("account" , false);
+
 
         bottom_navigation = findViewById(R.id.bottom_navigation);
         fragment_container = findViewById(R.id.fragment_container);
@@ -43,7 +42,14 @@ public class MainActivity extends AppCompatActivity {
                 Fragment selectedFragment = null;
                 switch (item.getItemId()){
                     case R.id.account:
+                        SharedPreferences sharedPreferences = getSharedPreferences("login_signUp", MODE_PRIVATE);
+                        boolean sign_up = sharedPreferences.getBoolean("sign_up", false);
+                        boolean login = sharedPreferences.getBoolean("login", false);
+                        if(sign_up == true || login == true){
+                            selectedFragment = new UserFragment();
+                        }else {
                             selectedFragment = new AccountFragment();
+                        }
                         break;
                     case R.id.home:
                         selectedFragment = new HomeFragment();

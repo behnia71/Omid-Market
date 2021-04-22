@@ -140,6 +140,8 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/border_edt"
                 android:layout_columnWeight="2"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
                 android:inputType="text"/>
             <TextView
                 android:gravity="center"
@@ -156,6 +158,8 @@
                 android:background="@drawable/border_edt"
                 android:textDirection="ltr"
                 android:layout_columnWeight="2"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
                 android:inputType="number"/>
             <TextView
                 android:gravity="center"
@@ -172,6 +176,8 @@
                 android:background="@drawable/border_edt"
                 android:textDirection="ltr"
                 android:layout_columnWeight="2"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
                 android:inputType="text"/>
             <TextView
                 android:gravity="center"
@@ -188,6 +194,8 @@
                 android:background="@drawable/border_edt"
                 android:textDirection="ltr"
                 android:layout_columnWeight="2"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
                 android:inputType="text"/>
         </GridLayout>
         <Button
