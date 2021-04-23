@@ -1,45 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center_vertical"
-    >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/first_last_name_TXT"
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/user"
+        android:scaleType="centerCrop"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#aaFF0000"/>
+
+    <LinearLayout
+        android:id="@+id/user_account"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16dp"
-        android:text="First Name "/>
+        android:layoutDirection="rtl"
+        android:textDirection="rtl"
+        android:orientation="vertical"
+        android:layout_margin="24dp">
 
-    <TextView
-        android:id="@+id/phone_number_TXT"
-        android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:text="نام و نام خانوادگی"
+            android:textColor="#FF0000"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/first_last_name_TXT"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="نام و نام خانوادگی"
+            android:textColor="#000000"
+            android:textStyle="bold"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="شماره تماس"
+                android:textColor="#FF0000"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/phone_number_TXT"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="شماره تماس"
+                android:textColor="#000000"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="محل سکونت"
+                android:textColor="#FF0000"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/address_TXT"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="محل سکونت"
+                android:textColor="#000000"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="علاقه مندی ها"
+                android:textColor="#FF0000"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/favorites_TXT"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="علاقه مندی ها"
+                android:textColor="#000000"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="پست الکترونیک"
+                android:textColor="#FF0000"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/email_TXT"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="پست الکترونیک"
+                android:textColor="#000000"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+    <Button
+        android:id="@+id/sign_out"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16dp"
-        android:text="Phone No. "/>
-
-    <TextView
-        android:id="@+id/address_TXT"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16dp"
-        android:text="Address "/>
-
-    <TextView
-        android:id="@+id/favorites_TXT"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16dp"
-        android:text="Address "/>
-
-    <TextView
-        android:id="@+id/email_TXT"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16dp"
-        android:text="Email "/>
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:text="خروج از حساب کاربری"/>
 </LinearLayout>

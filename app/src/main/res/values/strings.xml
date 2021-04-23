@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Omid Market</string>
+    <string name="first_last_name">نام و نام خانوادگی</string>
+    <string name="email_string">ایمیل خود را وارد کنید تا رمز شش رقمی برای شما ارسال شود.</string>
 </resources>

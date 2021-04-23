@@ -8,6 +8,7 @@
     android:layoutDirection="rtl">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbar_custom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#fff">
@@ -15,24 +16,30 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/myToolbar"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            app:title="خوش آمدید" />
-        <EditText
-            android:id="@+id/editText1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:hint="جستجو"
-            android:drawableRight="@drawable/ic_baseline_search_24"/>
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:src="@drawable/icon"/>
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:id="@+id/editText1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="برای جستجو در امید مارکت کلیک کنید"
+                android:drawableRight="@drawable/ic_baseline_search_24"
+                android:drawablePadding="8dp"
+                android:background="@drawable/border_search"
+                android:padding="8dp"
+                android:layout_marginEnd="8dp" />
         </LinearLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
     <FrameLayout
         android:id="@+id/fragment_container"
+        android:layout_below="@id/toolbar_custom"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/bottom_navigation"

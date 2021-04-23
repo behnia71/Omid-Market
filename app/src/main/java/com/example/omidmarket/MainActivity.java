@@ -17,14 +17,15 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottom_navigation;
     FrameLayout fragment_container;
     Toolbar myToolbar;
-    EditText editText1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        myToolbar = findViewById(R.id.myToolbar);
-        setSupportActionBar(myToolbar);
-        editText1 = findViewById(R.id.editText1);
+
+//        myToolbar = findViewById(R.id.myToolbar);
+//        setSupportActionBar(myToolbar);
+
+
 
 
 

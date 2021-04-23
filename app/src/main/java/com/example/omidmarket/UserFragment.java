@@ -1,11 +1,13 @@
 package com.example.omidmarket;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,7 +17,9 @@ import androidx.fragment.app.Fragment;
 public class UserFragment extends Fragment {
 
     private TextView firstName, phone, address, favorite, email;
+    private Button signOut;
     private SharedPreferences sharedPreferences;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -27,6 +31,8 @@ public class UserFragment extends Fragment {
         favorite = view.findViewById(R.id.favorites_TXT);
         email = view.findViewById(R.id.email_TXT);
 
+        signOut = view.findViewById(R.id.sign_out);
+
         sharedPreferences = getActivity().getSharedPreferences("login_signUp" , Context.MODE_PRIVATE);
 
 
@@ -36,7 +42,7 @@ public class UserFragment extends Fragment {
         String favorite_str= sharedPreferences.getString("favorite", "");
         String email_str= sharedPreferences.getString("email", "");
         boolean sign_up = sharedPreferences.getBoolean("sign_up", false);
-        if(sign_up == true) {
+        if(sign_up) {
             firstName.setText(name_str);
             phone.setText(phone_str);
             address.setText(address_str);
@@ -51,7 +57,7 @@ public class UserFragment extends Fragment {
         String email_LOG = sharedPreferences.getString("email_JS", "");
         boolean login = sharedPreferences.getBoolean("login", false);
 
-        if(login == true){
+        if(login){
 
             firstName.setText(name_LOG);
             phone.setText(phone_LOG);
@@ -60,6 +66,16 @@ public class UserFragment extends Fragment {
             email.setText(email_LOG);
         }
 
+        signOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.clear();
+                editor.commit();
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                getActivity().startActivity(intent);
+            }
+        });
 
         return view;
     }

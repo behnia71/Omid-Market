@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -70,12 +71,14 @@ public class AccountFragment extends Fragment {
         verifyLayout = view.findViewById(R.id.verify_layout);
         informationLayout = view.findViewById(R.id.information_layout);
 
+
         ver1 = view.findViewById(R.id.ver1);
         ver2 = view.findViewById(R.id.ver2);
         ver3 = view.findViewById(R.id.ver3);
         ver4 = view.findViewById(R.id.ver4);
         ver5 = view.findViewById(R.id.ver5);
         ver6 = view.findViewById(R.id.ver6);
+
 
         firstLastName = view.findViewById(R.id.first_last_name_EDT);
         phoneNumber = view.findViewById(R.id.phone_number_EDT);
@@ -88,14 +91,15 @@ public class AccountFragment extends Fragment {
         show_sendLayout();
 
 
+
         sendPhone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String username = "omidbehnia9@gmail.com";
+                final String username = "behniasender@gmail.com";
                 final String password = "Omid1371";
                 Random random = new Random();
                 randomNumber = random.nextInt(99999)+100000;
-                String messageToSend = "Your Code is : " + randomNumber;
+                String messageToSend = "برای ورود رمز شش رقمی را در نرم افزار امید مارکت وارد کیند : " + randomNumber + "\n" + " از پیوستن شما متشکریم :)";
                 Properties props = new Properties();
                 props.put("mail.smtp.auth", "true");
                 props.put("mail.smtp.starttls.enable", "true");
@@ -115,8 +119,7 @@ public class AccountFragment extends Fragment {
                     message.setSubject("به امید مارکت خوش آمدید");
                     message.setText(messageToSend);
                     Transport.send(message);
-
-                    Toast.makeText(getContext(), "ایمیل حاوی لینک ارسال شد", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "ایمیل حاوی رمز شش رقمی ارسال شد", Toast.LENGTH_SHORT).show();
                     show_verifyLayout();
                 }catch(MessagingException e){
                     Toast.makeText(getContext(), "Error" + e.getMessage() , Toast.LENGTH_SHORT).show();
@@ -127,12 +130,12 @@ public class AccountFragment extends Fragment {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
+
         next_editText(ver1 , ver2);
         next_editText(ver2 , ver3);
         next_editText(ver3 , ver4);
         next_editText(ver4 , ver5);
         next_editText(ver5 , ver6);
-
 
 
 
@@ -221,7 +224,7 @@ public class AccountFragment extends Fragment {
                                         !address_str.isEmpty() && !favorite_str.isEmpty()){
                                 if(code.equals("success")){
                                     Toast.makeText(getContext(), "ثبت نام شما با موافقت انجام شد", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getContext(), MainActivity.class);
+                                    Intent intent = new Intent(getActivity(), MainActivity.class);
                                     getActivity().startActivity(intent);
                                     editor.putString("name", firstLastName_str);
                                     editor.putString("phone", phone_str);
