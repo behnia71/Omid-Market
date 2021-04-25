@@ -185,6 +185,7 @@ public class AccountFragment extends Fragment {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(getContext(), "ERROR: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                        Log.e("TAG", "onErrorResponse: " + error );
                     }
                 }){
                     @Nullable
@@ -199,6 +200,12 @@ public class AccountFragment extends Fragment {
                 requestQueue.add(stringRequest);
             }else{
                 Toast.makeText(getContext(), "رمز اشتباه است", Toast.LENGTH_SHORT).show();
+                ver1.setText("");
+                ver2.setText("");
+                ver3.setText("");
+                ver4.setText("");
+                ver5.setText("");
+                ver6.setText("");
             }
         }
     });
@@ -249,7 +256,7 @@ public class AccountFragment extends Fragment {
                     }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-
+                    Log.e("TAG", "onErrorResponse2: " + error );
                 }
             }){
                 @Nullable
@@ -276,12 +283,14 @@ public class AccountFragment extends Fragment {
         sendLayout.setVisibility(View.VISIBLE);
         verifyLayout.setVisibility(View.GONE);
         informationLayout.setVisibility(View.GONE);
+        email.requestFocus();
 
     }
     public void show_verifyLayout(){
         sendLayout.setVisibility(View.GONE);
         verifyLayout.setVisibility(View.VISIBLE);
         informationLayout.setVisibility(View.GONE);
+        ver1.requestFocus();
     }
     public void show_informationLayout(){
         sendLayout.setVisibility(View.GONE);

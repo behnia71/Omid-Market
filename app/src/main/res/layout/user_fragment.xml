@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl">
 
     <ImageView
+        android:layout_gravity="center_horizontal"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="120dp"
         android:src="@drawable/user"
-        android:scaleType="centerCrop"
+        android:scaleType="fitXY"
         />
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#aaFF0000"/>
 
     <LinearLayout
         android:id="@+id/user_account"
@@ -21,7 +19,8 @@
         android:layoutDirection="rtl"
         android:textDirection="rtl"
         android:orientation="vertical"
-        android:layout_margin="24dp">
+        android:layout_margin="24dp"
+        android:visibility="gone">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -129,12 +128,152 @@
                 android:textColor="#000000"
                 android:textStyle="bold"/>
         </LinearLayout>
+
+        <Button
+            android:id="@+id/edit_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="ویرایش حساب کاربری"
+            android:backgroundTint="#3A3838"
+            android:layout_margin="16dp"/>
     </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/user_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="rtl"
+        android:textDirection="rtl"
+        android:orientation="vertical"
+        android:layout_margin="24dp"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="4dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="نام و نام خانوادگی"
+                android:textColor="#FF0000"
+                android:textStyle="bold"/>
+            <EditText
+                android:id="@+id/first_last_name_UP_EDT"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:padding="4dp"
+                android:background="@drawable/border"
+                android:textColor="#000000" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="4dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="شماره تماس"
+                android:textColor="#FF0000"
+                android:textStyle="bold"/>
+            <EditText
+                android:id="@+id/phone_number_UP_EDT"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:padding="4dp"
+                android:background="@drawable/border"
+                android:textColor="#000000" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="4dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="محل سکونت"
+                android:textColor="#FF0000"
+                android:textStyle="bold"/>
+            <EditText
+                android:id="@+id/address_UP_EDT"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:padding="4dp"
+                android:background="@drawable/border"
+                android:textColor="#000000" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="4dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="علاقه مندی ها"
+                android:textColor="#FF0000"
+                android:textStyle="bold"/>
+            <EditText
+                android:id="@+id/favorites_UP_EDT"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:padding="4dp"
+                android:background="@drawable/border"
+                android:textColor="#000000" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="پست الکترونیک"
+                android:textColor="#FF0000"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/email_UP_TXT"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="پست الکترونیک"
+                android:textColor="#000000" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/save_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_gravity="center_horizontal"
+            android:text="ثبت اطلاعات"
+            android:backgroundTint="#164665"/>
+
+    </LinearLayout>
+
     <Button
         android:id="@+id/sign_out"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_gravity="center_horizontal"
-        android:text="خروج از حساب کاربری"/>
+        android:text="خروج " />
 </LinearLayout>
